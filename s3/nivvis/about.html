@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" href="title.png" type="image/x-icon">
+    <title>Contact Form</title>
+    
+    <link rel="stylesheet" href="about.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agdasima&family=Caprasimo&family=Raleway&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header id="top-header">
+            <div class="logo-border">
+                <div class="logo">
+                </div>       
+            </div>
+        </header>
+        <div class="home-bar" id="bottom-header" >
+                <div class="small-logo"></div> 
+                <div class="burger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="name"></div>
+                <div class="v-resp">
+                    <a href="index.html">Home</a>
+                    <a href="index.html">Vision</a>
+                    <a href="index.html">Services</a>
+                    <a href="product.html">Products</a>
+                    <a href="about.html">About Us</a>
+                </div>  
+        </div> 
+        <div class="about">
+            <h2>About Us</h2>
+            <div class="aboutsec">
+                <div class="about-info">
+                    <p>Nivvis Labs, dedicated to advancing global health, offers high-quality, affordable medications with a focus on chronic care. Our mission encompasses research, development, and transformative solutions.
+                    Nivvis Labs is dedicated to enhancing global health through:</p>
+                        <ul>
+                            <li>Holistic healthcare solutions integrating research, development, and innovation.</li>
+                            <li>Affordable, high-quality medications, particularly targeting chronic care.</li>
+                            <li>Addressing healthcare challenges in emerging economies.</li>
+                            <li>Adapting to the ever-evolving healthcare landscape for a sustainable impact.</li>
+                        </ul>
+                       
+                </div>
+            </div>
+        </div>
+        <div class="form">
+            <form onsubmit="sendEmail(); reset(); return false;">
+                <h3>Contact Form</h3>
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Email id" required>
+                <input type="text" id="phone" placeholder="Phone no." required>
+                <input type="subject" id="subject" placeholder="Subject" required>
+                <textarea id="message" rows="3" placeholder="Your Message"></textarea>
+                <button type="submit">Send</button>
+               </form>
+        </div>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <div class="contactus">
+                <div class="contact-info">
+                    <p>Email: nivvislabs2021@gmail.com
+                    <br>Address: R/o.205, Floor GRD, Sunder Kamala Nagar,Laxmibai Kelkar marg, Shastri gully,Manav Seva Singh, Sion, Mumbai-400022</p></p></p>
+                </div>
+            </div>     
+        </section>
+        <footer>
+            &copy; NivvisLabs  
+        </footer>
+    </div>
+    <script src="about.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail()
+        {
+            Email.send({
+                Host : "smtp.elasticemail.com",
+                Username : "sravyareddyy17@gmail.com",
+                Password : "4F4CA08038FDB2035581079B4292B75FA05D",
+                To : 'shashanknani04@gmail.com',
+                From : document.getElementById("email").value,
+                Subject : "New Contact form enquiry",
+                Body : "Name: "+document.getElementById("name").value
+                    + "<br> Email: "+document.getElementById("email").value
+                    + "<br> Phone No: "+document.getElementById("phone").value
+                    + "<br> Message: "+document.getElementById("message").value
+            }).then(
+            message => alert("We will reach you shortly")
+            );
+        }
+    </script>
+</body>
+</html>
